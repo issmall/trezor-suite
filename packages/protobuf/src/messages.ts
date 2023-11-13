@@ -2285,6 +2285,69 @@ export type TezosSignedTx = {
     operation_hash: string;
 };
 
+// TronGetAddress
+export type TronGetAddress = {
+    address_n: number[];
+    show_display?: boolean;
+}
+
+// TronAddress
+export type TronAddress = {
+    address?: string;
+}
+
+// TronSignMessage
+export type TronSignMessage = {
+    address_n: number[];
+    message: string;
+}
+
+// TronMessageSignature
+export type TronMessageSignature = {
+    address: string;
+    signature: string;
+}
+
+// TronTransferContract
+export type TronTransferContract = {
+    to_address?: string;
+    amount?: number;
+    owner_address?: string;
+}
+
+// TronTriggerSmartContract
+export type TronTriggerSmartContract = {
+    contract_address?: string;
+    call_value?: number;
+    data?: string;
+    call_token_value?: number;
+    asset_id?: number;
+    owner_address?: string;
+}
+
+// TronContract
+export type TronContract = {
+    transfer_contract?: TronTransferContract;
+    trigger_smart_contract?: TronTriggerSmartContract;
+}
+
+// TronSignTx
+export type TronSignTx = {
+    address_n: number[];
+    ref_block_bytes: string;
+    ref_block_hash: string;
+    expiration: number;
+    data?: string;
+    contract: TronContract;
+    timestamp: number;
+    fee_limit?: number;
+}
+
+export type TronSignedTx = {
+    signature: string;
+    serialized_tx?: string;
+}
+
 // experimental_message
 export type experimental_message = {};
 
@@ -2553,6 +2616,12 @@ export type MessageType = {
     TezosBallotOp: TezosBallotOp;
     TezosSignTx: TezosSignTx;
     TezosSignedTx: TezosSignedTx;
+    TronGetAddress: TronGetAddress;
+    TronAddress: TronAddress;
+    TronSignMessage: TronSignMessage,
+    TronMessageSignature: TronMessageSignature,
+    TronSignTx: TronSignTx,
+    TronSignedTx: TronSignedTx,
     experimental_message: experimental_message;
     experimental_field: experimental_field;
 };

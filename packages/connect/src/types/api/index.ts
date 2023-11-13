@@ -73,6 +73,9 @@ import { stellarSignTransaction } from './stellarSignTransaction';
 import { tezosGetAddress } from './tezosGetAddress';
 import { tezosGetPublicKey } from './tezosGetPublicKey';
 import { tezosSignTransaction } from './tezosSignTransaction';
+import { tronGetAddress } from "./tronGetAddress";
+import { tronSignMessage } from "./tronSignMessage";
+import { tronSignTransaction } from "./tronSignTransaction";
 import { uiResponse } from './uiResponse';
 import { unlockPath } from './unlockPath';
 import { verifyMessage } from './verifyMessage';
@@ -310,6 +313,11 @@ export interface TrezorConnect {
 
     // https://github.com/trezor/trezor-suite/blob/develop/docs/packages/connect/methods/tezosSignTransaction.md
     tezosSignTransaction: typeof tezosSignTransaction;
+
+    // Tron
+    tronGetAddress: typeof tronGetAddress;
+    tronSignMessage: typeof tronSignMessage;
+    tronSignTransaction: typeof tronSignTransaction;
 
     // https://github.com/trezor/trezor-suite/blob/develop/docs/packages/connect/methods/uiResponse.md
     uiResponse: typeof uiResponse;

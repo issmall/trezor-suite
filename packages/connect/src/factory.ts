@@ -192,6 +192,17 @@ export const factory = ({
 
         tezosSignTransaction: params => call({ ...params, method: 'tezosSignTransaction' }),
 
+        tronGetAddress: params =>
+            call({
+                ...params,
+                method: 'tronGetAddress',
+                useEventListener: eventEmitter.listenerCount(UI.ADDRESS_VALIDATION) > 0,
+            }),
+
+        tronSignMessage: params => call({ ...params, method: 'tronSignMessage' }),
+
+        tronSignTransaction: params => call({ ...params, method: 'tronSignTransaction' }),
+
         unlockPath: params => call({ ...params, method: 'unlockPath' }),
 
         eosGetPublicKey: params => call({ ...params, method: 'eosGetPublicKey' }),

@@ -8,6 +8,7 @@ export const TYPES = {
     ripple: 'Ripple',
     tezos: 'Tezos',
     binance: 'Binance',
+    tron: 'Tron',
 } as const;
 
 export type NetworkType = keyof typeof TYPES;
@@ -21,6 +22,7 @@ export const MODULES = [
     'ripple',
     'stellar',
     'tezos',
+    'tron',
 ] as const;
 
 export type ModuleName = (typeof MODULES)[number];
